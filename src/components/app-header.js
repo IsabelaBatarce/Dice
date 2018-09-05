@@ -4,21 +4,22 @@ import { StyleSheet, Text, View, Image, StatusBar, TouchableHighlight, Alert } f
 export default class AppHeader extends React.Component {
   render() {
     return (
-      
       <View style={styles.container}>
         <View style={styles.movieHeader}>
           <StatusBar hidden={true}/>
           <View style={styles.movieHeaderTitle}>
-            <Image style={styles.movieHeaderLogo} source={{uri: this.props.icon}} />
+            <Image style={styles.movieHeaderLogo} source={require('../img/logo_top.png')} />
             <Text style={styles.movieHeaderTitleText}>{this.props.title}</Text>
           </View>
+          
         </View>
       </View>
-    
     );
   }
 
-  
+  _onPressButton() {
+    Alert.alert(this.props.title);
+  }
 }
 
 
